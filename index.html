@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>NG20002 - WEB API</title>
+	<meta charset="utf-8"  />
+<LINK REL=StyleSheet HREF="estilo.css" TYPE="text/css" MEDIA=screen>
+<script src="codigo.js"></script>
+
+</head>
+
+<body >
+	<div id = "hero">
+		<h1>Ejemplo de una Web API</h1>
+    	<h2>Gerardo Navarro - NG20002</h3>
+		<h3>Integrante del grupo #04 de la asignatura de TPI</h3>
+		<h3> Guia 61C </h3>
+	</div>
+	<div id="container-agregar" >
+		<form class="formagregar">
+			<h2>Añadir Producto</h2>
+			<p>
+				<label class="marginTitulo">Titulo: </label>
+				<input type="text" id="AgregarTitulo" class="ingresar"> 
+				<label>Precio: </label>
+				<input type="text" id="AgregarPrecio" class="ingresar">
+			</p>
+			<p>
+				<label>Descripción: </label><input type="text" id="AgregarDescripcion" class="ingresar" size="54">
+			</p>
+			<p>
+			<label class="marginImagen">Imagen: </label><input type="text" id="AgregarUrl" class="ingresar"> 
+			<label>Categoria: </label>
+			<select id="AgregarCategoria">
+				<option selected></option>
+				<option value="electronicos">electronicos</option>
+				<option value="joyeria">joyeria</option>
+				<option value="caballeros">caballeros</option>
+				<option value="damas">damas</option>
+				<i></i>
+			</select>
+			</p>
+			<p><button id = "agregarProd"onclick="agregarProductos()">Agregar Producto</button></p>
+		 </form>
+	</div>
+	 <div id = "container-btnProductos"><button id = "btnProductos" onclick="obtenerProductos();this.style.display='none';">Obtener Productos</button></div>
+	 <div id="listado" style="display:none;">
+		<form name="filtroprods" id="filtroprods">
+		Seleccione Categorias 
+			<input type="checkbox" id="c1" value="c1" checked>Electronicos
+			<input type="checkbox" id="c2" value="c2" checked>Joyería
+			<input type="checkbox" id="c3" value="c3" checked>Ropa Caballero
+			<input type="checkbox" id="c4" value="c4" checked>Ropa Dama
+			<ol><li>Click en la imagen para Acercamiento</li>
+			<li>Click en precio para ordenar Asc o Desc</li></ol>
+				<table id="tabla" border="1">
+					<thead>
+						<tr>
+							<th id = "codigo">#</th>
+							<th>Imagen del producto</th>
+							<th  id="price">Precio</th>
+							<th>Nombre del producto</th>
+							<th>Descripcion del producto</th>
+							<th>Categoria del producto</th>
+							<th>Accion</th>
+						</tr>
+					</thead>
+						<tbody id="tbody"></tbody>
+				</table>
+		</form>
+	</div>
+	
+     
+</body>
+</html>
